@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igngonza <igngonza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:18:00 by igngonza          #+#    #+#             */
-/*   Updated: 2024/12/27 12:05:36 by igngonza         ###   ########.fr       */
+/*   Updated: 2024/12/31 11:16:38 by igngonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_remove_excess_line(char *buffer)
 		free(buffer);
 		return (NULL);
 	}
-	solution = ft_calloc(ft_strlen(buffer) - i + 1, sizeof(char));
+	solution = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
 	j = 0;
 	i++;
 	while (buffer[i])
@@ -54,7 +54,7 @@ char	*ft_new_line_finder(char *solution_buffer)
 	int		i;
 
 	i = 0;
-	if (!solution_buffer)
+	if (!solution_buffer[i])
 		return (NULL);
 	while (solution_buffer[i] && solution_buffer[i] != '\n')
 		i++;

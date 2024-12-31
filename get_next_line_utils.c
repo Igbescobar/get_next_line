@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igngonza <igngonza@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:19:10 by igngonza          #+#    #+#             */
-/*   Updated: 2024/12/27 12:08:54 by igngonza         ###   ########.fr       */
+/*   Updated: 2024/12/31 10:44:19 by igngonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_append(char *s1, char *s2)
+char	*ft_append(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -26,14 +26,17 @@ char	*ft_append(char *s1, char *s2)
 	if (!solution || !s1 || !s2)
 		return (NULL);
 	while (s1[i])
+	{
 		solution[i] = s1[i];
+		i++;
+	}
 	while (s2[j])
 	{
 		solution[i] = s2[j];
 		i++;
 		j++;
 	}
-	solution[i] = 0;
+	solution[total_size] = 0;
 	return (solution);
 }
 
