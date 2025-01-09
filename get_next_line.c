@@ -6,7 +6,7 @@
 /*   By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:18:00 by igngonza          #+#    #+#             */
-/*   Updated: 2025/01/09 10:41:42 by igngonza         ###   ########.fr       */
+/*   Updated: 2025/01/09 18:02:20 by igngonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,14 @@ char	*get_next_line(int fd)
 	char		*extracted_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		if (solution_buffer)
+		{
+			free(solution_buffer);
+			solution_buffer = NULL;
+		}
 		return (NULL);
+	}
 	solution_buffer = read_file(fd, solution_buffer);
 	if (!solution_buffer)
 		return (NULL);

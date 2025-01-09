@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igngonza <igngonza@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:19:10 by igngonza          #+#    #+#             */
-/*   Updated: 2024/12/31 10:44:19 by igngonza         ###   ########.fr       */
+/*   Updated: 2025/01/09 18:07:35 by igngonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
