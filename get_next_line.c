@@ -6,7 +6,7 @@
 /*   By: igngonza <igngonza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:18:00 by igngonza          #+#    #+#             */
-/*   Updated: 2025/01/13 10:19:31 by igngonza         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:18:49 by igngonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ char	*read_file(int fd, char *solution_buffer)
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read == -1)
 		{
+			free(solution_buffer);
 			free(buffer);
 			return (NULL);
 		}
@@ -101,7 +102,7 @@ char	*get_next_line(int fd)
 	static char	*solution_buffer;
 	char		*extracted_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		if (solution_buffer)
 		{
